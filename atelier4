@@ -5,10 +5,19 @@ class Employe:
         self.prenom = prenom
         self.voiture_service = None
     def afficher_informations(self):
-    print(" Employe " )
-    print(f "Numero permis : {self.numero_permis} ")
-    print(f "Nom : {self.nom} ")
-    print(f "Prenom : {self.prenom} ")
+        print("Employe")
+        print(f"Numero permis : {self.numero_permis}")
+        print(f"Nom : {self.nom}")
+        print(f"Prenom : {self.prenom}")
+    def affecter_voiture(self, voiture):
+        self.voiture_service = voiture 
+        voiture.chauffeur = self
+        print(f"{self.prenom} conduit maintenant la voiture {voiture.matricule}")
+    def retirer_voiture(self):
+        if self.voiture_service is not None:
+            print(f"{self.prenom} ne conduit plus la voiture {self.voiture_service.matricule}")
+            self.voiture_service.chauffeur = None
+            self.voiture_service = None
 class Voiture:
     def __init__(self, matricule, annee, marque, kilometrage):
         self.matricule = matricule
@@ -17,13 +26,12 @@ class Voiture:
         self.kilometrage = kilometrage
         self.chauffeur = None
     def afficher_informations(self):
-    print(" Voiture " )
-    print(f "Matricule : {self.matricule}")
-    print(f "Marque : {self.marque}")
-    print(f "Annee : {self.annee} ")
-    print(f "Kilometrage : {self.kilometrage}")
-from employe import Employe
-from voiture import Voiture
+        print("Voiture")
+        print(f"Matricule : {self.matricule}")
+        print(f"Marque : {self.marque}")
+        print(f"Annee : {self.annee}")
+        print(f"Kilometrage : {self.kilometrage}")
+
 employe1 = Employe(" P123456 ", "Mansouri", "Mohamed")
 employe2 = Employe("P654321", "Ali", "Sami")
 voiture1 = Voiture("ABC123", 2020, "Toyota", 45000)
