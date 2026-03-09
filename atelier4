@@ -22,3 +22,9 @@ class Voiture:
     print(f "Marque : {self.marque}")
     print(f "Annee : {self.annee} ")
     print(f "Kilometrage : {self.kilometrage}")
+from employe import Employe
+from voiture import Voiture
+employe1 = Employe(" P123456 ", "Mansouri", "Mohamed")
+employe2 = Employe("P654321", "Ali", "Sami")
+voiture1 = Voiture("ABC123", 2020, "Toyota", 45000)
+voiture2 = Voiture("DEF456",2022,"Honda", 18000)
